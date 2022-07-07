@@ -8,3 +8,4 @@ Overall, today I:
 * Set up the Gitlab where you're reading this
 * Renamed, resized, and uploaded all the soil images to this repository
 * Tried running a couple images on the sample KerasV3 Colab, copied to my own Lehigh Google Drive. [Link here.](https://colab.research.google.com/drive/16e8fGO9hrRz9-6FhqvkHh6l8k6CMg4QZ?usp=sharing)
+
