@@ -8,3 +8,8 @@ Overall, today I:
 * Set up the Gitlab where you're reading this
 * Renamed, resized, and uploaded all the soil images to this repository
 * Tried running a couple images on the sample KerasV3 Colab, copied to my own Lehigh Google Drive. [Link here.](https://colab.research.google.com/drive/16e8fGO9hrRz9-6FhqvkHh6l8k6CMg4QZ?usp=sharing)
+
+
+**7/12/2022**
+
+I tried swapping out the image that was being evaluated in the aforemention Colab several times to see if any better results were given. I'm not sure if it's just because the photos are lower resolution, but the model is having a terrible time trying to segment anything in the image. I'll see if I can find another pre-trained model that may work better.
