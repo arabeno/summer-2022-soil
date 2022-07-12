@@ -17,4 +17,4 @@ I tried swapping out the image that was being evaluated in the aforemention Cola
 Update: the below photo is me running the model with a higher resolution photo. As you can see, it didn't do much better of a job segmenting (the lower res photos just produced an entirely black grid).
 
 ![Soil High Res Test](deeplab_v3_highres_soil_example.png "High Res Test")
-![Soil Original Image]("https://gitlab.com/aer224/summer-2022-soil/-/raw/main/Soil%20Photos/soil_photo%20(1).jpg "High Res Original)
+![Soil Original Image](https://gitlab.com/aer224/summer-2022-soil/-/raw/main/Soil%20Photos/soil_photo%20(1).jpg "High Res Original")
