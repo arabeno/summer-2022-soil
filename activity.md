@@ -14,4 +14,4 @@ Overall, today I:
 
 I tried swapping out the image that was being evaluated in the aforemention Colab several times to see if any better results were given. I'm not sure if it's just because the photos are lower resolution, but the model is having a terrible time trying to segment anything in the image. I'll see if I can find another pre-trained model that may work better.
 
-![Soil High Res Test](C:\Users\Sasha Rabeno\Desktop\Summer 2022\CSE 190\summer-2022-soil\deeplab_v3_highres_soil_example.png "High Res Test")
+![Soil High Res Test]deeplab_v3_highres_soil_example.png "High Res Test")
