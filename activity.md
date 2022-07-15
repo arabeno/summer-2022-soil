@@ -18,3 +18,8 @@ Update: the below photo is me running the model with a higher resolution photo. 
 
 ![Soil High Res Test](deeplab_v3_highres_soil_example.png "High Res Test")
 ![Soil Original Image](https://gitlab.com/aer224/summer-2022-soil/-/raw/main/Soil%20Photos/soil_photo%20(1).jpg "High Res Original")
+
+
+**7/15/22**
+
+Today I met with Joe Desbonnet, one of the other people involved on the project (he's not from the university, but he's the one whose company is working with the soil photos/who supplied the soil photos). I shared my recent progress with him, and he recommended looking into using Open CV software to see if it does a better job with the images than the Deeplab V3 did. He said to look into blob extraction algorithms as well to see if they could extract, say, large areas of brown pixels in a given soil image from everything else around it. I'll take more of a look at it this weekend (I had a busy week with my other class wrapping up here!).
