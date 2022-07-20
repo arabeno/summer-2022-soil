@@ -23,3 +23,16 @@ Update: the below photo is me running the model with a higher resolution photo. 
 **7/15/22**
 
 Today I met with Joe Desbonnet, one of the other people involved on the project (he's not from the university, but he's the one whose company is working with the soil photos/who supplied the soil photos). I shared my recent progress with him, and he recommended looking into using Open CV software to see if it does a better job with the images than the Deeplab V3 did. He said to look into blob extraction algorithms as well to see if they could extract, say, large areas of brown pixels in a given soil image from everything else around it. I'll take more of a look at it this weekend (I had a busy week with my other class wrapping up here!).
+
+
+**7/16/22**
+
+Today I began trying to use OpenCV to do some basic image segmentation. I installed all the required packages as recommended on the OpenCV wesbite (numpy, matplotlib, etc.). However, something must've been in the wrong folder somewhere, because I couldn't get any of it to run properly on my machine.
+
+**7/18/22**
+
+Got SUPER sick over the weekend (spent Sunday with a high fever and bedridden; all signs point to it being Covid). Thus, didn't manage to get much done besides meeting with Joe Desbonnet again to check in (and let him know I was sick). I have another meeting scheduled with him and Prof. Schukat (my advisor here) on Wednesday, and I think we wrap up Thursday.
+
+**7/19/22**
+
+Tried once again installing OpenCV--I think it just doesn't like me. Also spent the day fatigued and in bed so hopefully I'll feel better (and be able to get something done) the rest of the week,
