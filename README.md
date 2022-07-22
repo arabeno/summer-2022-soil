@@ -7,6 +7,8 @@ This repo is for my implementation of basic ML/Colab usage to segment images of 
 The current pre-trained model I'm trying to use is the [Keras DeepLab v3 Plus model][1]. To be honest, it hasn't done a fantastic job with the couple photos I've tried.
 I've also been following along with *most of* the [Udacity Intro to Tensorflow online course][2].
 
+After the failed attempt at using the Keras DeepLab model, I managed to hit a breakthrough using SciKit. All of my code was from [this article][3].
+
 ## Goals
 * Attempt basic machine learning training on image segmentation
 * Have, at the very least, a proof of concept/basic implementation by ~ July 20th.
@@ -15,3 +17,4 @@ I've also been following along with *most of* the [Udacity Intro to Tensorflow o
 
 [1]: https://github.com/bonlime/keras-deeplab-v3-plus
 [2]: https://learn.udacity.com/courses/ud187
+[3]: https://towardsdatascience.com/image-processing-with-python-blob-detection-using-scikit-image-5df9a8380ade
