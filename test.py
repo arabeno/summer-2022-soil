@@ -1,4 +1,4 @@
-print("hello");
+print("Hello!");
 #All of this code is from https://towardsdatascience.com/image-processing-with-python-blob-detection-using-scikit-image-5df9a8380ade
 
 import matplotlib.pyplot as plt
@@ -13,65 +13,65 @@ from scipy.ndimage import median_filter
 from matplotlib.patches import Rectangle
 from tqdm import tqdm
 
-print("done!");
+print("Done importing libraries!");
 
-tree = imread('soil_photo_1.jpg')
-imshow(tree);
+dirt = imread('https://gitlab.com/aer224/summer-2022-soil/-/raw/main/Soil%20Photos/soil_photo%20(1).jpg')
+imshow(dirt);
 
-tree_gray = rgb2gray(tree)
-otsu_thresh = threshold_otsu(tree_gray)
-tree_binary = tree_gray < otsu_thresh
-imshow(tree_binary, cmap = 'gray');
+dirt_gray = rgb2gray(dirt)
+otsu_thresh = threshold_otsu(dirt_gray)
+dirt_binary = dirt_gray < otsu_thresh
+imshow(dirt_binary, cmap = 'gray'); #Showing greyscale image
 
-tree_hsv = rgb2hsv(tree[:,:,:3])
+dirt_hsv = rgb2hsv(dirt[:,:,:3])
 plt.figure(num=None, figsize=(8, 6), dpi=80)
-plt.imshow(tree_hsv[:,:,0], cmap='hsv')
+plt.imshow(dirt_hsv[:,:,0], cmap='hsv') #Showing HSV
 plt.colorbar();
 
-lower_mask = tree_hsv [:,:,0] > 0.80
-upper_mask = tree_hsv [:,:,0] <= 1.00
+lower_mask = dirt_hsv [:,:,0] > 0.80
+upper_mask = dirt_hsv [:,:,0] <= 1.00
 mask = upper_mask*lower_mask
-red = tree[:,:,0]*mask
-green = tree[:,:,1]*mask
-blue = tree[:,:,2]*mask
-tree_mask = np.dstack((red,green,blue))
+red = dirt[:,:,0]*mask
+green = dirt[:,:,1]*mask
+blue = dirt[:,:,2]*mask
+dirt_mask = np.dstack((red,green,blue))
 plt.figure(num=None, figsize=(8, 6), dpi=80)
-imshow(tree_mask);
+imshow(dirt_mask);
 
-tree_hsv = rgb2hsv(tree[:,:,:3])
+dirt_hsv = rgb2hsv(dirt[:,:,:3])
 plt.figure(num=None, figsize=(8, 6), dpi=80)
-plt.imshow(tree_hsv[:,:,2], cmap='gray')
+plt.imshow(dirt_hsv[:,:,2], cmap='gray')
 plt.colorbar();
 
-lower_mask = tree_hsv [:,:,0] > 0.80
-upper_mask = tree_hsv [:,:,0] <= 1.00
-value_mask = tree_hsv [:,:,2] < .90
+lower_mask = dirt_hsv [:,:,0] > 0.80
+upper_mask = dirt_hsv [:,:,0] <= 1.00
+value_mask = dirt_hsv [:,:,2] < .90
 mask = upper_mask*lower_mask*value_mask
-red = tree[:,:,0] * mask
-green = tree[:,:,1] * mask
-blue = tree[:,:,2] * mask
-tree_mask = np.dstack((red, green, blue))
+red = dirt[:,:,0] * mask
+green = dirt[:,:,1] * mask
+blue = dirt[:,:,2] * mask
+dirt_mask = np.dstack((red, green, blue))
 plt.figure(num=None, figsize=(8, 6), dpi=80)
-imshow(tree_mask);
+imshow(dirt_mask);
 
-lower_mask = tree_hsv [:,:,0] > 0.80
-upper_mask = tree_hsv [:,:,0] <= 1.00
-value_mask = tree_hsv [:,:,2] < .90
+lower_mask = dirt_hsv [:,:,0] > 0.80
+upper_mask = dirt_hsv [:,:,0] <= 1.00
+value_mask = dirt_hsv [:,:,2] < .90
 mask = median_filter(upper_mask*lower_mask*value_mask, 10)
-red = tree[:,:,0] * mask
-green = tree[:,:,1] * mask
-blue = tree[:,:,2] * mask
-tree_mask = np.dstack((red, green, blue))
+red = dirt[:,:,0] * mask
+green = dirt[:,:,1] * mask
+blue = dirt[:,:,2] * mask
+dirt_mask = np.dstack((red, green, blue))
 plt.figure(num=None, figsize=(8, 6), dpi=80)
-imshow(tree_mask);
+imshow(dirt_mask);
 
-tree_blobs = label(rgb2gray(tree_mask) > 0)
-imshow(tree_blobs, cmap = 'tab10');
+dirt_blobs = label(rgb2gray(dirt_mask) > 0)
+imshow(dirt_blobs, cmap = 'tab10');
 
 properties =['area','bbox','convex_area','bbox_area',
              'major_axis_length', 'minor_axis_length',
              'eccentricity']
-df = pd.DataFrame(regionprops_table(tree_blobs, properties = properties))
+df = pd.DataFrame(regionprops_table(dirt_blobs, properties = properties))
 
 
 blob_coordinates = [(row['bbox-0'],row['bbox-1'],
@@ -84,9 +84,18 @@ for blob in tqdm(blob_coordinates):
     patch = Rectangle((blob[1],blob[0]), width, height, 
                        edgecolor='r', facecolor='none')
     ax.add_patch(patch)
-ax.imshow(tree);
+ax.imshow(dirt);
 ax.set_axis_off()
 
 df = df[df['eccentricity'] < df['eccentricity'].max()]
 
-plt.show(block=True) #this is the wonderful command that actually plots everything
+fig, ax = plt.subplots(1, len(blob_coordinates), figsize=(15,5))
+for n, axis in enumerate(ax.flatten()):
+    axis.imshow(dirt[int(blob_coordinates[n][0]):
+                     int(blob_coordinates[n][2]), 
+                     int(blob_coordinates[n][1]):
+                     int(blob_coordinates[n][3])]);
+    
+fig.tight_layout()
+
+plt.show(block=True) #this is the wonderful command that actually plots everything (on my machine at least)
