@@ -35,4 +35,12 @@ Got SUPER sick over the weekend (spent Sunday with a high fever and bedridden; a
 
 **7/19/22**
 
-Tried once again installing OpenCV--I think it just doesn't like me. Also spent the day fatigued and in bed so hopefully I'll feel better (and be able to get something done) the rest of the week,
+Tried once again installing OpenCV--I think it just doesn't like me. Also spent the day fatigued and in bed so hopefully I'll feel better (and be able to get something done) the rest of the week.
+
+**7/20/22**
+
+Somehow had a breakthrough (thanks to SciKit) in the twenty minutes before my meeting. Got some actually presentable masking visuals (hooray!), and am planning to generate more before the meeting on Friday.
+
+**7/22/22**
+
+Had final meeting today with Joe and Dr. Schukat. I compiled a basic PowerPoint of about 7 or 8 soil photo examples with the masking/HSV graphs/etc. It's not super fancy looking, as it isn't my final deliverable, but the link to that is [here](https://docs.google.com/presentation/d/1UoytcKRPnC5iYQ_a_ks9q3NBU2hfIUm2fY_vFDwiXF4/edit?usp=sharing).
